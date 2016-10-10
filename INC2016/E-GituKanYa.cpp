@@ -2,7 +2,7 @@
  * Contest : INC 2016
  * Team    : GituKanYa
  * Author  : Jauhar Arifin
- * Problem : B - Legendary Dance
+ * Problem : E - Legendary Dance
  */
 
 #include <bits/stdc++.h>
