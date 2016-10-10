@@ -600,7 +600,7 @@ Irpin loves to walk around in the city where he lives. There are N intersections
 
 A walk in the city is defined as an alternating sequence of intersections and roads (starting and ending at an intersection), in which each road in the sequence is incident to both of its adjacent roads. Note that, unlike a path, a walk may have repeating intersections and roads in its sequence.
 
-Let W (walk's length) be the sum of all road's length in the walk, and R be the number of roads in the walk. If 2^R ≤ W, then the cost of the walk is 2*W; otherwise the cost will simply be W. If you're wondering why such confusing method to calculate the walk cost, Irpin felt a short walk (walk which uses only few number of roads) is kind of "cheating"; therefore, he doubles the cost of any short walks, i.e. become 2*W instead of W.
+Let W (walk's length) be the sum of all road's length in the walk, and R be the number of roads in the walk. If 2^R ≤ W, then the cost of the walk is 2\*W; otherwise the cost will simply be W. If you're wondering why such confusing method to calculate the walk cost, Irpin felt a short walk (walk which uses only few number of roads) is kind of "cheating"; therefore, he doubles the cost of any short walks, i.e. become 2\*W instead of W.
 
 Suppose Irpin wants to have a walk from intersection A to intersection B, help him determine the minimum cost walk among all possible walks from A to B.
 
