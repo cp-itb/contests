@@ -1,6 +1,6 @@
 # contests
 
-[![CircleCI](https://circleci.com/gh/azaky/contests/tree/master.svg?style=svg)](https://circleci.com/gh/azaky/contests/tree/master)
+[![CircleCI](https://circleci.com/gh/competitive-programming-itb/contests/tree/master.svg?style=svg)](https://circleci.com/gh/competitive-programming-itb/contests/tree/master)
 
 Solutions to various CP contests (especially Indonesian local contests), written by teams from Institut Teknologi Bandung.
 
