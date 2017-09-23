@@ -18,7 +18,7 @@ node generator.js
 # Publish the result
 git add -A > /dev/null 2>&1
 git commit --allow-empty -m "Deploy [ci skip]"
-git push --force --quiet origin gh-pages > /dev/null 2>&1
+git push --force --quiet origin gh-pages
 
 # Don't know what's this for, but locally it is neat to finish on master
 git checkout master
