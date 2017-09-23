@@ -120,7 +120,7 @@ fs.readdirSync(__dirname)
         });
     });
 
-console.log(JSON.stringify(contests, null, 2));
+console.log('[GENERATOR] Successfully generated contest data:', contests);
 
 /* From https://stackoverflow.com/questions/30976477/generate-static-html-files-from-ejs-templates */
 const ejs2html = (path, target, data) => {
@@ -135,6 +135,8 @@ const ejs2html = (path, target, data) => {
                 console.log(err);
                 process.exit(1);
             }
+
+            console.log('[GENERATOR] Successfully generated index.html');
         });
     });
 }
@@ -142,3 +144,4 @@ const ejs2html = (path, target, data) => {
 ejs2html(path.join(__dirname, 'template.ejs'), path.join(__dirname, 'index.html'), {
     contests: contests,
 });
+
