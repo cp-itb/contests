@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- <link rel="icon" href="../../../../favicon.ico"> -->
+    <title>Dashboard Template for Bootstrap</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha256-m/h/cUDAhf6/iBRixTbuc8+Rg2cIETQtPcH9D3p2Kg0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css" integrity="sha256-Zd1icfZ72UBmsId/mUcagrmN7IN5Qkrvh75ICHIQVTk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.8.0/github-markdown.min.css" integrity="sha256-Lt9340Td+22fUGyXnrvSDEy9lnZunEDDyYyQ3QOGgeg=" crossorigin="anonymous" />
+    <!-- Custom styles for this template -->
+    <link href="assets/css/dashboard.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">cp-itb/contests</a>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-sm-3 col-md-2 bg-light sidebar">
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item nav-pills">
+                        <a class="nav-link contest-tab" data-toggle="pill" href="#INC2016">
+                            <b>INC 2016</b>
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="nav-item nav-pills">
+                        <a class="nav-link contest-tab" href="#">
+                            <b>COMPFEST 2016</b>
+                        </a>
+                        <a class="nav-link contest-tab" data-toggle="pill" href="#COMPFEST2016-penyisihan">
+                            Penyisihan
+                        </a>
+                        <a class="nav-link contest-tab" data-toggle="pill" href="#COMPFEST2016-final">
+                            Final
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="nav-item nav-pills">
+                        <a class="nav-link contest-tab" href="#">
+                            <b>GEMASTIK 2016</b>
+                        </a>
+                        <a class="nav-link contest-tab" data-toggle="pill" href="#GEMASTIK2016-penyisihan">
+                            Penyisihan
+                        </a>
+                        <a class="nav-link contest-tab" data-toggle="pill" href="#GEMASTIK2016-final">
+                            Final
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                </ul>
+            </nav>
+
+            <main class="col-sm-9 ml-sm-auto col-md-10 pt-3" role="main">
+                <div class="tab-content">
+                    <div class="tab-pane fade contest-tab" id="INC2016">
+                        <h5>INC 2016</h5>
+                        <nav class="nav nav-tabs">
+                            <a class="nav-item nav-link" data-toggle="tab" href="#INC2016-overview">Overview</a>
+                            <a class="nav-item nav-link" data-toggle="tab" href="#INC2016-A" id="INC2016-A-tab">A</a>
+                            <a class="nav-item nav-link" data-toggle="tab" href="#INC2016-B" id="INC2016-B-tab">B</a>
+                            <a class="nav-item nav-link" data-toggle="tab" href="#INC2016-C" id="INC2016-C-tab">C</a>
+                        </nav>
+                        <div class="tab-content">
+                            <div class="tab-pane fade" id="INC2016-overview">
+                                <ul>
+                                    <li><a href="#INC2016-A-tab" class="problem-link">Problem A: Title</a></li>
+                                    <li><a href="#INC2016-B-tab" class="problem-link">Problem B: Title</a></li>
+                                </ul>
+                            </div>
+                            <div class="tab-pane fade" id="INC2016-A">
+                                <div class="row">
+                                    <div class="col-sm-3 col-md-2">
+                                        <div class="list-group" id="list-tab" role="tablist">
+                                            <a class="list-group-item list-group-item-action ajaxfileloader" id="list-home-list" data-toggle="list" href="#list-home"><b>Problem</b></a>
+                                            <button class="list-group-item list-group-item-action"><b>Solutions</b></button>
+                                            <a class="list-group-item list-group-item-action ajaxfileloader" id="list-messages-list" data-toggle="list" href="#list-messages">Ainge WF</a>
+                                            <a class="list-group-item list-group-item-action ajaxfileloader" id="list-settings-list" data-toggle="list" href="#list-settings">GituKanYa</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-9 col-md-10">
+                                        <div class="tab-content" id="nav-tabContent">
+                                            <div class="tab-pane fade show active" id="list-home" role="tabpanel" data-filesource="INC2016/problems/README.md" data-fileloaded="false">
+                                                Loading...</div>
+                                            <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">Loading...</div>
+                                            <div class="tab-pane fade" id="list-messages" role="tabpanel" data-filesource="INC2016/A-Ainge WF.cpp" data-fileloaded="false">Loading...</div>
+                                            <div class="tab-pane fade" id="list-settings" role="tabpanel" data-filesource="INC2016/A-GituKanYa.cpp" data-fileloaded="false">Loading...</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="INC2016-B">...</div>
+                            <div class="tab-pane fade" id="INC2016-C">...</div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade contest-tab" id="COMPFEST2016-penyisihan">
+                        <h5>COMPFEST 2016 Penyisihan</h5>
+                        <nav class="nav nav-tabs">
+                            <a class="nav-item nav-link" data-toggle="tab" href="#COMPFEST2016-penyisihan-overview">Overview</a>
+                            <a class="nav-item nav-link" data-toggle="tab" href="#COMPFEST2016-penyisihan-A" id="COMPFEST2016-penyisihan-A-tab">A</a>
+                            <a class="nav-item nav-link" data-toggle="tab" href="#COMPFEST2016-penyisihan-B" id="COMPFEST2016-penyisihan-B-tab">B</a>
+                            <a class="nav-item nav-link" data-toggle="tab" href="#COMPFEST2016-penyisihan-C" id="COMPFEST2016-penyisihan-C-tab">C</a>
+                        </nav>
+                        <div class="tab-content">
+                            <div class="tab-pane fade" id="COMPFEST2016-penyisihan-overview">
+                                <ul>
+                                    <li><a href="#COMPFEST2016-penyisihan-A-tab" class="problem-link">Problem A: Title</a></li>
+                                    <li><a href="#COMPFEST2016-penyisihan-B-tab" class="problem-link">Problem B: Title</a></li>
+                                </ul>
+                            </div>
+                            <div class="tab-pane fade" id="COMPFEST2016-penyisihan-A">...</div>
+                            <div class="tab-pane fade" id="COMPFEST2016-penyisihan-B">...</div>
+                            <div class="tab-pane fade" id="COMPFEST2016-penyisihan-C">...</div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade contest-tab" id="COMPFEST2016-final">
+                        <h5>COMPFEST 2016 Final</h5>
+                        <nav class="nav nav-tabs">
+                            <a class="nav-item nav-link" data-toggle="tab" href="#COMPFEST2016-final-overview">Overview</a>
+                            <a class="nav-item nav-link" data-toggle="tab" href="#COMPFEST2016-final-A" id="COMPFEST2016-final-A-tab">A</a>
+                            <a class="nav-item nav-link" data-toggle="tab" href="#COMPFEST2016-final-B" id="COMPFEST2016-final-B-tab">B</a>
+                            <a class="nav-item nav-link" data-toggle="tab" href="#COMPFEST2016-final-C" id="COMPFEST2016-final-C-tab">C</a>
+                        </nav>
+                        <div class="tab-content">
+                            <div class="tab-pane fade" id="COMPFEST2016-final-overview">
+                                <ul>
+                                    <li><a href="#COMPFEST2016-final-A-tab" class="problem-link">Problem A: Title</a></li>
+                                    <li><a href="#COMPFEST2016-final-B-tab" class="problem-link">Problem B: Title</a></li>
+                                </ul>
+                            </div>
+                            <div class="tab-pane fade" id="COMPFEST2016-final-A">...</div>
+                            <div class="tab-pane fade" id="COMPFEST2016-final-B">...</div>
+                            <div class="tab-pane fade" id="COMPFEST2016-final-C">...</div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <!-- Bootstrap core JavaScript
+================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha256-DiWJXXyq81WlPRnDfGmgYZj2aOVCKyEdJ1l+2TmDuAs=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.7.4/showdown.min.js" integrity="sha256-ABe6QqWGbNFZSCvuF6dKVgf0yWKGwtvcm5mbPBQdZH0=" crossorigin="anonymous"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

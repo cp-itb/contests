@@ -1,0 +1,23 @@
+{
+  "name": "contests",
+  "version": "1.0.0",
+  "description": "Page generator for viewing contests solutions and problems",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/competitive-programming-itb/contests.git"
+  },
+  "author": "@azaky",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/competitive-programming-itb/contests/issues"
+  },
+  "homepage": "https://github.com/competitive-programming-itb/contests#readme",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "lodash": "^4.17.4"
+  }
+}
