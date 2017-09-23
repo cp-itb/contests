@@ -4,6 +4,8 @@
 set -e
 
 # Get a new clean gh-pages branch
+git config --global user.email "ahmadzaky003@gmail.com" > /dev/null 2>&1
+git config --global user.name "Ahmad Zaky" > /dev/null 2>&1
 if git rev-parse --verify gh-pages > /dev/null 2>&1
 then
     git branch -D gh-pages
