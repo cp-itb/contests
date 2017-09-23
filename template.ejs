@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- <link rel="icon" href="../../../../favicon.ico"> -->
+    <title>cp-itb/contests</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha256-m/h/cUDAhf6/iBRixTbuc8+Rg2cIETQtPcH9D3p2Kg0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css" integrity="sha256-Zd1icfZ72UBmsId/mUcagrmN7IN5Qkrvh75ICHIQVTk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.8.0/github-markdown.min.css" integrity="sha256-Lt9340Td+22fUGyXnrvSDEy9lnZunEDDyYyQ3QOGgeg=" crossorigin="anonymous" />
+    <!-- Custom styles for this template -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">cp-itb/contests</a>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-sm-3 col-md-2 bg-light sidebar">
+                <ul class="nav nav-pills flex-column">
+                    <% contests.forEach((contest) => { %>
+                        <% if (contest.onlyround) { %>
+                            <li class="nav-item nav-pills">
+                                <a class="nav-link contest-tab" data-toggle="pill" href="#<%= contest.code %>">
+                                    <b><%= contest.name %> <%= contest.year %></b>
+                                </a>
+                            </li>
+                        <% } else { %>
+                            <li class="nav-item nav-pills">
+                                <a class="nav-link contest-tab" href="#">
+                                    <b><%= contest.name %> <%= contest.year %></b>
+                                </a>
+                                <% contest.rounds.forEach((round) => { %>
+                                    <a class="nav-link contest-tab" data-toggle="pill" href="#<%= round.code %>">
+                                        <%= round.humanizedName %>
+                                    </a>
+                                <% }) %>
+                            </li>
+                        <% } %>
+                        <li class="divider"></li>
+                    <% }) %>
+                </ul>
+            </nav>
+
+            <main class="col-sm-9 ml-sm-auto col-md-10 pt-3" role="main">
+                <div class="tab-content">
+                    <% contests.forEach((contest) => { %>
+                        <% contest.rounds.forEach((round) => { %>
+                            <div class="tab-pane fade contest-tab" id="<%= round.code %>">
+                                <h5><%= round.humanizedFullName %></h5>
+                                <nav class="nav nav-tabs">
+                                    <a class="nav-item nav-link" data-toggle="tab" href="#<%= round.code %>-overview">Overview</a>
+                                    <% round.problems.forEach((problem) => { %>
+                                        <a class="nav-item nav-link problem-tab" data-toggle="tab" href="#<%= round.code %>-<%= problem.code %>" id="<%= round.code %>-<%= problem.code %>-tab"><%= problem.code %></a>
+                                    <% }) %>
+                                </nav>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade" id="<%= round.code %>-overview">
+                                        <ul>
+                                            <% round.problems.forEach((problem) => { %>
+                                                <li><a href="#<%= round.code %>-<%= problem.code %>-tab" class="problem-link">Problem <%= problem.code %></a></li>
+                                            <% }) %>
+                                        </ul>
+                                    </div>
+                                    <% round.problems.forEach((problem) => { %>
+                                        <div class="tab-pane fade" id="<%= round.code %>-<%= problem.code %>">
+                                            <div class="row">
+                                                <div class="col-sm-3 col-md-2">
+                                                    <div class="list-group" id="list-tab" role="tablist">
+                                                        <a class="list-group-item list-group-item-action ajaxfileloader" data-toggle="list" href="#<%= round.code %>-<%= problem.code %>-problem"><b>Problem</b></a>
+                                                        <button class="list-group-item list-group-item-action"><b>Solutions</b></button>
+                                                        <% problem.solutions.forEach((solution) => { %>
+                                                            <a class="list-group-item list-group-item-action ajaxfileloader" id="list-messages-list" data-toggle="list" href="#<%= round.code %>-<%= problem.code %>-solution-<%= solution.escapedAuthor %>"><%= solution.author %></a>
+                                                        <% }) %>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-9 col-md-10">
+                                                    <div class="tab-content">
+                                                        <% if (problem.statement) { %>
+                                                            <div class="tab-pane fade show active" id="<%= round.code %>-<%= problem.code %>-problem" data-filesource="<%= problem.statement %>" data-fileloaded="false">
+                                                                Loading...</div>
+                                                        <% } else { %>
+                                                            <div class="tab-pane fade show active" id="<%= round.code %>-<%= problem.code %>-problem">
+                                                                No problem statement found. Try to find it <a href="https://www.google.com/?q=<%= encodeURIComponent(round.humanizedFullName) %>+Problem+<%= problem.code %>" target="_blank">here</a></div>
+                                                        <% } %>
+                                                        <% problem.solutions.forEach((solution) => { %>
+                                                            <div class="tab-pane fade" id="<%= round.code %>-<%= problem.code %>-solution-<%= solution.escapedAuthor %>" data-filesource="<%= solution.path %>">Loading...</div>
+                                                        <% }) %>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <% }) %>
+                                </div>
+                            </div>
+                        <% }) %>
+                    <% }) %>
+                </div>
+            </main>
+        </div>
+    </div>
+    <!-- Bootstrap core JavaScript
+================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha256-DiWJXXyq81WlPRnDfGmgYZj2aOVCKyEdJ1l+2TmDuAs=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.7.4/showdown.min.js" integrity="sha256-ABe6QqWGbNFZSCvuF6dKVgf0yWKGwtvcm5mbPBQdZH0=" crossorigin="anonymous"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

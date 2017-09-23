@@ -12,6 +12,9 @@ $(function() {
         console.log($(this).attr('href'));
         $($(this).attr('href')).tab('show');
     });
+    $('.problem-tab').on('shown.bs.tab', function(e) {
+        $($(e.target).attr('href')).find('[data-toggle="list"]').first().tab('show');
+    });
     $('.ajaxfileloader').on('shown.bs.tab', function(e) {
         var target = $($(e.target).attr('href'));
 
@@ -30,19 +33,20 @@ $(function() {
 function loadFile(source, target, callback) {
     $.get(source)
         .done(function(res) {
+            var escaped = $('<div/>').text(res).html()
             var format = source.split('.').pop();
             if (format === 'md') {
                 target.html(new showdown.Converter({
                     tables: true,
-                }).makeHtml(res));
+                }).makeHtml(escaped));
             } else {
-                target.html('<pre><code class="' + format + '">' + res + '</code></pre>');
+                target.html('<pre><code class="' + format + '">' + escaped + '</code></pre>');
                 target.find('pre code').each(function(_, block) {
                     hljs.highlightBlock(block);
                 });
             }
             if (callback) {
-                callback(null, res);
+                callback(null, escaped);
             }
         })
         .fail(function(err) {
