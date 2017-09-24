@@ -10,9 +10,13 @@ const escapeForID = (id) => {
 const listProblems = (roundPath) => {
     const solutionFiles = _.filter(fs.readdirSync(roundPath)
         .map((file) => {
-            if (!fs.statSync(path.join(roundPath, file)).isDirectory()) {
-                return file;
+            if (fs.statSync(path.join(roundPath, file)).isDirectory()) {
+                return;
             }
+            if (_.toLower(file).startsWith('readme')) {
+                return;
+            }
+            return file;
         }));
     const problemCodes = _.sortedUniq(_.filter(solutionFiles.map((s) => {
         const matches = /^(\w+)\-?/.exec(s);
