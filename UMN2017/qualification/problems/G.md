@@ -39,7 +39,7 @@ dimana x merepresentasikan nomor kasus, y adalah jumlah maksimal kapten dan z me
 
 untuk kasus 1 :
 
-![](img/g-1.png)
+![g-1](https://user-images.githubusercontent.com/5902356/30779916-9fb6b82a-a128-11e7-916d-c8f1c314c2a9.png)
 
 ## Batasan
 

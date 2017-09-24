@@ -19,33 +19,33 @@ In this problem, you are given a matrix A of N x M (i.e. A[1 .. N][1 .. M]) and 
 
 For example, consider the following matrix of 4 x 5:
 
-![](images/inc16-k-matrix-1.jpg)
+![inc16-k-matrix-1](https://user-images.githubusercontent.com/5902356/30779899-47f90b7e-a128-11e7-9cc0-f00da1657dc6.jpg)
 
 Supposed there are 4 queries, respectively:
 
 - rotate cw 2 1 2
 	Rotate the square submatrix A[2 .. 2+2][1 .. 1+2], i.e. A[2 .. 4][1 .. 3] clockwise.
 
-![](images/inc16-k-matrix-rot-cw.jpg)
+![inc16-k-matrix-rot-cw](https://user-images.githubusercontent.com/5902356/30779905-4bbb2eea-a128-11e7-80ca-c51224daee7b.jpg)
 
 - rotate ccw 1 4 1
 	Rotate the square submatrix A[1 .. 1+1][4 .. 4+1], i.e. A[1 .. 2][4 .. 5] clockwise.
 
-![](images/inc16-k-matrix-rot-ccw.jpg)
+![inc16-k-matrix-rot-ccw](https://user-images.githubusercontent.com/5902356/30779904-4bbb3b4c-a128-11e7-99c5-1d6be55d86ea.jpg)
 
 - reflect x 2 2 3 5
 	Reflect the submatrix A[2 .. 3][2 .. 5] on x-axis.
 
-![](images/inc16-k-matrix-ref-x.jpg)
+![inc16-k-matrix-ref-x](https://user-images.githubusercontent.com/5902356/30779902-4b995716-a128-11e7-88eb-ba484b12bff1.jpg)
 
 - reflect y 2 3 4 5
 	Reflect the submatrix A[2 .. 4][3 .. 5] on y-axis.
 
-![](images/inc16-k-matrix-ref-y.jpg)
+![inc16-k-matrix-ref-y](https://user-images.githubusercontent.com/5902356/30779903-4bb9cde8-a128-11e7-9e0b-edb6dc65012e.jpg)
 
 Thus, after those queries, the final matrix becomes:
 
-![](images/inc16-k-matrix-2.jpg)
+![inc16-k-matrix-2](https://user-images.githubusercontent.com/5902356/30779901-4b687ea2-a128-11e7-9e9d-0debcae696f9.jpg)
           
 Your task is to output the final matrix after all queries are executed sequentially.
 
