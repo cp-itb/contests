@@ -53,7 +53,7 @@
                 <div class="tab-content">
                     <% contests.forEach((contest) => { %>
                         <% contest.rounds.forEach((round) => { %>
-                            <div class="tab-pane fade contest-tab" id="<%= round.code %>">
+                            <div class="tab-pane fade" id="<%= round.code %>">
                                 <h5><%= round.humanizedFullName %></h5>
                                 <nav class="nav nav-tabs">
                                     <a class="nav-item nav-link" data-toggle="tab" href="#<%= round.code %>-overview">Overview</a>
