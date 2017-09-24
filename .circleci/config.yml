@@ -5,6 +5,8 @@
 version: 2
 jobs:
   build:
+    branches:
+      only: master
     docker:
       # specify the version you desire here
       - image: circleci/node:7.10
@@ -37,12 +39,3 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-
-workflows:
-  version: 2
-  build:
-    jobs:
-      - build
-        filters:
-          branches:
-            only: master
