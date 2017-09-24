@@ -5,14 +5,19 @@ $(function() {
         var targetContent = $(target.attr('href'));
         targetContent.parent().find('.active').not(targetContent).removeClass('active');
         // Show #overview
-        $(target.attr('href')).find('[data-toggle="tab"]').first().tab('show');
+        targetContent.find('[data-toggle="tab"]').first().tab('show');
     });
     $('.problem-link').on('click', function(e) {
         e.preventDefault();
         $($(this).attr('href')).tab('show');
     });
     $('.problem-tab').on('shown.bs.tab', function(e) {
-        $($(e.target).attr('href')).find('[data-toggle="list"]').first().tab('show');
+        var target = $(e.target);
+        // Remove all active class on hidden tab
+        var targetContent = $(target.attr('href'));
+        targetContent.parent().find('.active').not(targetContent).removeClass('active');
+        // Show #overview
+        targetContent.find('[data-toggle="list"]').first().tab('show');
     });
     $('.ajaxfileloader').on('shown.bs.tab', function(e) {
         var target = $($(e.target).attr('href'));
