@@ -106,6 +106,7 @@ fs.readdirSync(__dirname)
                 code: code,
                 name: '.',
                 humanizedName: `${name} ${year}`,
+                humanizedFullName: `${name} ${year}`,
                 problems: listProblems(contestPath),
             });
             onlyround = true;
