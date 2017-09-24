@@ -1,15 +1,14 @@
 $(function() {
     $('.contest-tab').on('shown.bs.tab', function(e) {
         var target = $(e.target);
-        var relatedTarget = $(e.relatedTarget);
         // Remove all active class on hidden tab
-        $(relatedTarget.attr('href')).find('.active').removeClass('active');
+        var targetContent = $(target.attr('href'));
+        targetContent.parent().find('.active').not(targetContent).removeClass('active');
         // Show #overview
         $(target.attr('href')).find('[data-toggle="tab"]').first().tab('show');
     });
     $('.problem-link').on('click', function(e) {
         e.preventDefault();
-        console.log($(this).attr('href'));
         $($(this).attr('href')).tab('show');
     });
     $('.problem-tab').on('shown.bs.tab', function(e) {
@@ -20,6 +19,9 @@ $(function() {
 
         // Load file
         if (target.data('fileloaded') === 'true') {
+            return;
+        }
+        if (!target.data('filesource')) {
             return;
         }
         loadFile(target.data('filesource'), target, function(err) {
