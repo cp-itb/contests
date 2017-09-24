@@ -5,7 +5,28 @@ const path = require('path');
 
 const escapeForID = (id) => {
     return id.replace(/\.| /g, '_');
-}
+};
+
+const getProblemCodePrefix = (s) => {
+    const matches = /^(\w+)\-?/.exec(s);
+    if (matches) {
+        return matches[1];
+    }
+};
+
+const extractProblemName = (code, file, dir) => {
+    // try to extract directly
+    const filenameMatches = new RegExp(`^${code}\\s*-\\s*(.+)\\.\\w+$`).exec(file);
+    if (filenameMatches) {
+        return filenameMatches[1];
+    }
+    // from the file content
+    const content = fs.readFileSync(path.join(dir, file), 'utf-8');
+    const filecontentMatches = new RegExp(`^\\s*#*\\s*${code}\\s*\\-?\\s*(.+)$`, 'gm').exec(content);
+    if (filecontentMatches) {
+        return filecontentMatches[1];
+    }
+};
 
 const listProblems = (roundPath) => {
     const solutionFiles = _.filter(fs.readdirSync(roundPath)
@@ -18,23 +39,27 @@ const listProblems = (roundPath) => {
             }
             return file;
         }));
-    const problemCodes = _.sortedUniq(_.filter(solutionFiles.map((s) => {
-        const matches = /^(\w+)\-?/.exec(s);
-        if (matches) {
-            return matches[1];
-        }
-    })));
+    const statementPath = path.join(roundPath, 'problems');
     let statementFiles;
     try {
-        statementFiles = fs.readdirSync(path.join(roundPath, 'problems'))
+        statementFiles = _.filter(fs.readdirSync(statementPath)
             .map((file) => {
-                if (!fs.statSync(path.join(roundPath, 'problems', file)).isDirectory()) {
-                    return file;
+                if (fs.statSync(path.join(statementPath, file)).isDirectory()) {
+                    return;
                 }
-            });
+                if (_.toLower(file).startsWith('readme')) {
+                    return;
+                }
+                return file;
+            }));
     } catch (e) {
         statementFiles = []
     }
+
+    const problemCodes = _.sortBy(_.uniq(_.concat(
+        solutionFiles.map(getProblemCodePrefix),
+        statementFiles.map(getProblemCodePrefix)
+    )));
     const statements = _.filter(statementFiles);
     const problems = problemCodes.map((code) => {
         const solutions = _.filter(solutionFiles, (s) => s.startsWith(code))
@@ -49,17 +74,19 @@ const listProblems = (roundPath) => {
                 };
             });
         let statement = _.find(statements, (name) => (name.startsWith(code)));
+        let name;
         if (statement) {
-            statement = path.relative(__dirname, path.join(roundPath, 'problems', statement));
+            name = extractProblemName(code, statement, statementPath);
+            statement = path.relative(__dirname, path.join(statementPath, statement));
         }
         return {
+            name,
             code,
             statement,
             solutions,
         }
     });
     return problems;
-    // TODO: compare with problems (and possibly get the problem's name too)
 }
 
 const contests = _.filter(fs.readdirSync(__dirname)
