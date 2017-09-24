@@ -1,14 +1,15 @@
 $(function() {
     $('.contest-tab').on('shown.bs.tab', function(e) {
         var target = $(e.target);
+        var relatedTarget = $(e.relatedTarget);
         // Remove all active class on hidden tab
-        var targetContent = $(target.attr('href'));
-        targetContent.parent().find('.active').not(targetContent).removeClass('active');
+        $(relatedTarget.attr('href')).find('.active').removeClass('active');
         // Show #overview
         $(target.attr('href')).find('[data-toggle="tab"]').first().tab('show');
     });
     $('.problem-link').on('click', function(e) {
         e.preventDefault();
+        console.log($(this).attr('href'));
         $($(this).attr('href')).tab('show');
     });
     $('.problem-tab').on('shown.bs.tab', function(e) {
@@ -19,9 +20,6 @@ $(function() {
 
         // Load file
         if (target.data('fileloaded') === 'true') {
-            return;
-        }
-        if (!target.data('filesource')) {
             return;
         }
         loadFile(target.data('filesource'), target, function(err) {
@@ -38,9 +36,10 @@ function loadFile(source, target, callback) {
             var escaped = $('<div/>').text(res).html()
             var format = source.split('.').pop();
             if (format === 'md') {
-                target.html(new showdown.Converter({
+                var html = new showdown.Converter({
                     tables: true,
-                }).makeHtml(escaped));
+                }).makeHtml(escaped);
+                target.html('<div class="markdown-body">' + html + '</div>');
             } else {
                 target.html('<pre><code class="' + format + '">' + escaped + '</code></pre>');
                 target.find('pre code').each(function(_, block) {
