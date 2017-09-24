@@ -38,9 +38,10 @@ function loadFile(source, target, callback) {
             var escaped = $('<div/>').text(res).html()
             var format = source.split('.').pop();
             if (format === 'md') {
-                target.html(new showdown.Converter({
+                var html = new showdown.Converter({
                     tables: true,
-                }).makeHtml(escaped));
+                }).makeHtml(escaped);
+                target.html('<div class="markdown-body">' + html + '</div>');
             } else {
                 target.html('<pre><code class="' + format + '">' + escaped + '</code></pre>');
                 target.find('pre code').each(function(_, block) {
