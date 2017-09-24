@@ -89,7 +89,7 @@ const listProblems = (roundPath) => {
     return problems;
 }
 
-const contests = _.filter(fs.readdirSync(__dirname)
+const contests = _.orderBy(_.filter(fs.readdirSync(__dirname)
     .map((dir) => {
         if (dir.startsWith('.') || dir === 'template' || dir === 'node_modules' || dir === 'assets') {
             return;
@@ -149,7 +149,7 @@ const contests = _.filter(fs.readdirSync(__dirname)
             rounds,
             onlyround,
         };
-    }));
+    })), ['year', 'code'], ['desc', 'asc']);
 
 console.log('[GENERATOR] Successfully generated contest data:');
 console.log(JSON.stringify(contests, null, 2));
