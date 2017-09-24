@@ -4,9 +4,6 @@
 #
 version: 2
 jobs:
-  branches:
-    only:
-      - master
   build:
     docker:
       # specify the version you desire here
@@ -40,3 +37,12 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build
+        filters:
+          branches:
+            only: master
