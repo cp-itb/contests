@@ -58,8 +58,7 @@ const listProblems = (roundPath) => {
     // TODO: compare with problems (and possibly get the problem's name too)
 }
 
-const contests = [];
-fs.readdirSync(__dirname)
+const contests = _.filter(fs.readdirSync(__dirname)
     .map((dir) => {
         if (dir.startsWith('.') || dir === 'template' || dir === 'node_modules' || dir === 'assets') {
             return;
@@ -112,16 +111,17 @@ fs.readdirSync(__dirname)
             onlyround = true;
         }
 
-        contests.push({
+        return {
             code,
             name,
             year,
             rounds,
             onlyround,
-        });
-    });
+        };
+    }));
 
-console.log('[GENERATOR] Successfully generated contest data:', contests);
+console.log('[GENERATOR] Successfully generated contest data:');
+console.log(JSON.stringify(contests, null, 2));
 
 /* From https://stackoverflow.com/questions/30976477/generate-static-html-files-from-ejs-templates */
 const ejs2html = (path, target, data) => {
