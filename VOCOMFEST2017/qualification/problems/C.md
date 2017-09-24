@@ -10,7 +10,7 @@ Batik Cap is one of the famous technique to produce Indonesian traditional cloth
 
 Mr. Blangkon, Head of small Batik Cap Company, asks you to create a program that shows the preview of the Batik Cap cloth before it is produced. You will be given P small Batik patterns (each has size M width x N length), then draw the full-pattern of Batik Cap cloth (that has size R width x C length) after stamped with the P small patterns.
 
-![](images/c-1.png)
+![c-1](https://user-images.githubusercontent.com/5902356/30779934-f23a18a8-a128-11e7-963a-33b792d287cd.png)
 
 For example, you are given P=3 small Batik patterns A, B, and C (see the figure above). Those small patterns will be stamped on the cloth using the following rules:
 

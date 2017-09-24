@@ -12,11 +12,11 @@ Given a matrix of integers M, determine how many beautiful quadruple of M there 
 
 For example, consider the following matrix of 3 x 4:
 
-![](images/inc16-c-quad-1.jpg)
+![inc16-c-quad-1](https://user-images.githubusercontent.com/5902356/30779884-fbdf9f0a-a127-11e7-8932-1551edb07bce.jpg)
 
 There are two beautiful quadruples, i.e. ⟨1, 3, 2, 4⟩ and ⟨2, 3, 2, 3⟩, as shown in the following figures.
 
-![](images/inc16-c-quad-2.jpg)
+![inc16-c-quad-2](https://user-images.githubusercontent.com/5902356/30779889-209ddaa0-a128-11e7-9bc8-a889c8edeac1.jpg)
 
 There are no other quadruples which are beautiful, thus, in this example, the output is 2.
 

@@ -9,7 +9,7 @@
 Pak Umon gemar bermain Half-Life dan Half-Life 2. Namun, ia terlebih gemar bermain dengan poligon kesayangannya. Poligon tersebut berbentuk konveks (cembung) dan memiliki N sisi. Belakangan ini, ia mendengar gosip bahwa akan dirilis Half-Life 3. Pak Umon ingin merayakannya bersama dengan poligon kesayangannya dengan menggambar pola segitiga pada poligon tersebut. Pak Umon mengambil spidol dan melukis beberapa garis yang menghubungkan
 titik-titik sudut dari poligon tersebut. Hasilnya adalah sebagai berikut.
 
-![](img/b-1.png)
+![b-1](https://user-images.githubusercontent.com/5902356/30779920-9fccabf8-a128-11e7-9541-14d188b2560e.png)
 
 Garis-garis yang dilukis tidak boleh saling berpotongan. Perhatikan bahwa untuk poligon dengan N sisi, harus tepat dibagi menjadi (N-2) segitiga.
 
@@ -53,7 +53,7 @@ merupakan waktu tersingkat seperti yang diminta soal.
 
 Berikut garis yang dilukis Pak Umon untuk kedua contoh kasus uji.
 
-![](img/b-2.png)
+![b-2](https://user-images.githubusercontent.com/5902356/30779917-9fb6ae0c-a128-11e7-994d-27a5520b3077.png)
 
 
 ## Batasan

@@ -11,7 +11,7 @@ agar hidangan tersebut sampai tepat di depan kita.
 
 Malam ini, disajikan tepat N hidangan berbeda untuk N orang tamu. Awalnya, tamu 1 menghadap hidangan 1, tamu 2 menghadap hidangan 2, dan seterusnya hingga tamu N menghadap hidangan N. Apabila meja diputar k posisi ke kiri, Maka tamu 1 jadi menghadap hidangan ke 1+k MOD N, tamu 2 menghadap hidangan ke 2+k MOD N, hingga tamu ke N menghadap hidangan ke k. Lihat skema berikut untuk memperjelas.
 
-![](img/e-1.png)
+![e-1](https://user-images.githubusercontent.com/5902356/30779918-9fba0db8-a128-11e7-9cc4-549049e747c3.png)
 
 Meja untuk N=6 tamu, diputar sebanyak k=2 ke kiri.
 
@@ -64,7 +64,7 @@ Untuk kasus kedua, ini mirip dengan kasus pertama, tetapi untuk menyantap hidang
 
 Kasus ketiga dijelaskan dengan gambar berikut
 
-![](img/e-2.png)
+![e-2](https://user-images.githubusercontent.com/5902356/30779919-9fc8940a-a128-11e7-97de-3aab7542a3fe.png)
 
 ## Batasan
 

@@ -8,7 +8,7 @@
 
 Pak Chandra sedang suka dengan encoding, kali ini dia menemukan suatu jenis encoding yang mengubah binary menjadi karakter. Jenis encoding ini mengambil 6 bit binary, kemudian mengubah nya menjadi bilangan desimal. Setelah itu bilangan desimal ini akan di ubah menjadi huruf dengan ketentuan sebagai berikut :
 
-![](img/a-1.png)
+![a-1](https://user-images.githubusercontent.com/5902356/30779915-9fb599c2-a128-11e7-8fea-0b2ea8200dc5.png)
 
 Gambar diatas menjelaskan bahwa angka 0 akan diubah menjadi 'A', angka 1 akan diubah menjadi 'B' dst. Pak Chandra meminta bantuan Anda sebagai programmer handal untuk membuat program yang menerima sekumpulan angka binary kemudian menampilkan hasil encodingnya.
 
