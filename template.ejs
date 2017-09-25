@@ -75,6 +75,9 @@
                                                 <div class="col-sm-3 col-md-2">
                                                     <div class="list-group" id="list-tab" role="tablist">
                                                         <a class="list-group-item list-group-item-action ajaxfileloader" data-toggle="list" href="#<%= round.code %>-<%= problem.code %>-problem"><b>Problem</b></a>
+                                                        <% if (problem.editorial) { %>
+                                                            <a class="list-group-item list-group-item-action ajaxfileloader" data-toggle="list" href="#<%= round.code %>-<%= problem.code %>-editorial"><b>Editorial</b></a>
+                                                        <% } %>
                                                         <button class="list-group-item list-group-item-action"><b>Solutions</b></button>
                                                         <% problem.solutions.forEach((solution) => { %>
                                                             <a class="list-group-item list-group-item-action ajaxfileloader" id="list-messages-list" data-toggle="list" href="#<%= round.code %>-<%= problem.code %>-solution-<%= solution.escapedAuthor %>"><%= solution.author %></a>
@@ -89,6 +92,10 @@
                                                         <% } else { %>
                                                             <div class="tab-pane fade show active" id="<%= round.code %>-<%= problem.code %>-problem">
                                                                 No problem statement found. Try to find it <a href="https://www.google.com/?q=<%= encodeURIComponent(round.humanizedFullName) %>+Problem+<%= problem.code %>" target="_blank">here</a></div>
+                                                        <% } %>
+                                                        <% if (problem.editorial) { %>
+                                                            <div class="tab-pane fade show active" id="<%= round.code %>-<%= problem.code %>-editorial" data-filesource="<%= problem.editorial %>" data-fileloaded="false">
+                                                                Loading...</div>
                                                         <% } %>
                                                         <% problem.solutions.forEach((solution) => { %>
                                                             <div class="tab-pane fade" id="<%= round.code %>-<%= problem.code %>-solution-<%= solution.escapedAuthor %>" data-filesource="<%= solution.path %>">Loading...</div>

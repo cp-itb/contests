@@ -123,7 +123,7 @@ const contests = _.orderBy(_.filter(fs.readdirSync(__dirname)
                 if (!fs.statSync(roundPath).isDirectory()) {
                     return;
                 }
-                if (subdir === 'problems') {
+                if (subdir === 'problems' || subdir === 'editorials') {
                     return;
                 }
 
