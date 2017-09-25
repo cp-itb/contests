@@ -35,6 +35,47 @@ $(function() {
             }
         });
     });
+
+    // Update URL hash on tab shown
+    $('[data-toggle="tab"],[data-toggle="list"]').on('show.bs.tab', function (e) {
+        var href = $(this).attr('href');
+        location.hash = href;
+    });
+
+    // Parse URL hash and view appropriate tab, sequentially
+    function showTab(url, separatorIndex) {
+        var tab = url;
+        if (!separatorIndex) {
+            separatorIndex = url.indexOf('-');
+        }
+        if (separatorIndex !== -1) {
+            tab = url.slice(0, separatorIndex);
+        }
+        function showNextTab() {
+            if (separatorIndex !== -1) {
+                return setTimeout(function() {
+                    showTab(url, url.indexOf('-', separatorIndex + 1));
+                }, 0);
+            }
+        }
+
+        var elem = $('[href="#' + tab + '"]');
+        if (elem.length === 0) {
+            showNextTab();
+        }
+
+        function shownListener() {
+            showNextTab();
+            elem.off('shown.bs.tab', shownListener);
+        }
+        elem.on('shown.bs.tab', shownListener);
+        elem.tab('show');
+    }
+
+    var hash = location.hash.replace('#', '');
+    if (hash) {
+        showTab(hash);
+    }
 });
 
 function escapeHTML(text) {
