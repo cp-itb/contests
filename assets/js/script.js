@@ -73,6 +73,6 @@ function loadFile(source, target, callback) {
             if (callback) {
                 callback(err);
             }
-            target.replaceWith('Some error occured');
+            target.html('Some error occured');
         });
 }
