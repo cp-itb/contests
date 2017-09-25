@@ -44,12 +44,11 @@ function escapeHTML(text) {
 function loadFile(source, target, callback) {
     $.get(source)
         .done(function(res) {
-            var escaped = escapeHTML(res);
             var format = source.split('.').pop();
             if (format === 'md') {
                 var html = new showdown.Converter({
                     tables: true,
-                }).makeHtml(escaped);
+                }).makeHtml(res);
                 var container = $('<div/>').addClass('markdown-body').html(html);
                 renderMathInElement(container.get(0), {
                     delimiters: [
@@ -59,6 +58,7 @@ function loadFile(source, target, callback) {
                 });
                 target.html(container);
             } else {
+                var escaped = escapeHTML(res);
                 var container = $('<pre/>').html($('<code/>').addClass(format).html(escaped));
                 target.html(container);
                 target.find('pre code').each(function(_, block) {
