@@ -8,10 +8,41 @@ Solutions to various CP contests (especially Indonesian local contests), written
 
 All ITB students are very welcomed to contribute to this repository. To make everything neat and structured well, it is recommended to follow these guide before adding your solutions.
 
-1. Project structure. Each contest should have their own folder named `<ContestName><Year>`. If the contest has several phases (qualification, final, etc), each of them should have their own subfolders.
-2. If the problem statement is available, create a `problems` folder and put each statement in files named `<code>-<name>.md`, or `<code>.md` if the name does not exist. For example, `A.md` or `A-Bebek Pak Dengklek.md`.
-3. File Naming. It is recommended to name each file by `<ProblemCode>-<TeamName>.<extension>`.
-4. Each file is recommended to have the following header.
+1. Project structure. This should be self-explanatory.
+
+        ├── INC2016                 // <ContestName><Year>
+        │   ├── A-Ainge WF.cpp      // Solutions goes here
+        │   ├── A-GituKanYa.cpp     // <ProblemCode>-<TeamName>.<extension>
+        │   ├── B-Ainge WF.cpp
+        │   ├── C-nagazaky.cpp
+        │   ├── ...
+        │   ├── editorials          // Where to put editorials. This is optional
+        │   │   ├── A.md            // <ProblemCode>.md
+        │   │   ├── B.md            // Currently only markdown is supported
+        │   │   ├── E.md            // Missing editorials are fine (C & D in this case)
+        │   │   └── ...
+        │   └── problems            // Where to put problem statements.
+        │       │                   // This is optional, too, but very recommended
+        │       ├── A.md            // <ProblemCode>.md
+        │       ├── B.md
+        │       └── ...
+        │   ...
+        ├── VOCOMFEST2017
+        │   ├── qualification       // If contest has several phases/rounds,
+        │   │   │                   // each should have their own subfolders.
+        │   │   ├── A-Ainge WF.cpp
+        │   │   ├── B-Ainge WF.cpp
+        │   │   ├── ...
+        │   │   └── problems
+        │   │       ├── A.md
+        │   │       ├── B.md
+        │   │       └── ...
+        │   └── final
+        │       ├── A-Ainge WF.cpp
+        │       ├── B-Ainge WF.cpp
+        │       └── ...
+
+2. Each solution file is recommended to have the following header.
 
         /**
          * Contest : <Name of Contest>
@@ -20,6 +51,6 @@ All ITB students are very welcomed to contribute to this repository. To make eve
          * Problem : <Problem Code> - <Problem Name>
          */
 
-For example, solution to problem A solved by team *juara* in ITBPC 2000 final should be saved as:
+For example, solution to problem A solved by team *juara* in ITBPC 2000 round *final* should be saved as:
 
     ITBPC2000/final/A-juara.cpp
