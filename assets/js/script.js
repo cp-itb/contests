@@ -37,18 +37,30 @@ $(function() {
     });
 });
 
+function escapeHTML(text) {
+    return $('<div/>').text(text).html();
+}
+
 function loadFile(source, target, callback) {
     $.get(source)
         .done(function(res) {
-            var escaped = $('<div/>').text(res).html()
+            var escaped = escapeHTML(res);
             var format = source.split('.').pop();
             if (format === 'md') {
                 var html = new showdown.Converter({
                     tables: true,
                 }).makeHtml(escaped);
-                target.html('<div class="markdown-body">' + html + '</div>');
+                var container = $('<div/>').addClass('markdown-body').html(html);
+                renderMathInElement(container.get(0), {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                    ],
+                });
+                target.html(container);
             } else {
-                target.html('<pre><code class="' + format + '">' + escaped + '</code></pre>');
+                var container = $('<pre/>').html($('<code/>').addClass(format).html(escaped));
+                target.html(container);
                 target.find('pre code').each(function(_, block) {
                     hljs.highlightBlock(block);
                 });
@@ -61,5 +73,6 @@ function loadFile(source, target, callback) {
             if (callback) {
                 callback(err);
             }
+            target.replaceWith('Some error occured');
         });
 }
