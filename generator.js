@@ -28,39 +28,38 @@ const extractProblemName = (code, file, dir) => {
     }
 };
 
-const listProblems = (roundPath) => {
-    const solutionFiles = _.filter(fs.readdirSync(roundPath)
-        .map((file) => {
-            if (fs.statSync(path.join(roundPath, file)).isDirectory()) {
-                return;
-            }
-            if (_.toLower(file).startsWith('readme')) {
-                return;
-            }
-            return file;
-        }));
-    const statementPath = path.join(roundPath, 'problems');
-    let statementFiles;
+const listFiles = (dir, blacklist) => {
     try {
-        statementFiles = _.filter(fs.readdirSync(statementPath)
+        return _.filter(fs.readdirSync(dir)
             .map((file) => {
-                if (fs.statSync(path.join(statementPath, file)).isDirectory()) {
-                    return;
+                if (!fs.statSync(path.join(dir, file)).isDirectory()) {
+                    return file;
                 }
-                if (_.toLower(file).startsWith('readme')) {
-                    return;
+            }), (file) => {
+                if (!file) {
+                    return false;
                 }
-                return file;
-            }));
+                if (blacklist) {
+                    return !_.some(blacklist, (pattern) => (_.toLower(file).startsWith(_.toLower(pattern))));
+                }
+                return true;
+            });
     } catch (e) {
-        statementFiles = []
+        return [];
     }
+}
+
+const listProblems = (roundPath) => {
+    const solutionFiles = listFiles(roundPath, ['readme']);
+    const statementPath = path.join(roundPath, 'problems');
+    const statementFiles = listFiles(statementPath, ['readme']);
+    const editorialPath = path.join(roundPath, 'editorials');
+    const editorialFiles = listFiles(editorialPath, ['readme']);
 
     const problemCodes = _.sortBy(_.uniq(_.concat(
         solutionFiles.map(getProblemCodePrefix),
         statementFiles.map(getProblemCodePrefix)
     )));
-    const statements = _.filter(statementFiles);
     const problems = problemCodes.map((code) => {
         const solutions = _.filter(solutionFiles, (s) => s.startsWith(code))
             .map((s) => {
@@ -73,18 +72,23 @@ const listProblems = (roundPath) => {
                     path: p,
                 };
             });
-        let statement = _.find(statements, (name) => (name.startsWith(code)));
+        let statement = _.find(statementFiles, (name) => (name.startsWith(code)));
         let name;
         if (statement) {
             name = extractProblemName(code, statement, statementPath);
             statement = path.relative(__dirname, path.join(statementPath, statement));
+        }
+        let editorial = _.find(editorialFiles, (name) => (name.startsWith(code)));
+        if (editorial) {
+            editorial = path.relative(__dirname, path.join(editorialPath, editorial));
         }
         return {
             name,
             code,
             statement,
             solutions,
-        }
+            editorial,
+        };
     });
     return problems;
 }
