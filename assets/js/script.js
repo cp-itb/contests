@@ -98,6 +98,13 @@ function loadFile(source, target, callback) {
                     ],
                 });
                 target.html(container);
+            } else if (format === 'pdf') {
+                var container = $('<iframe/>', {
+                    src: source,
+                    width: '100%',
+                    height: '700px'
+                });
+                target.html(container);
             } else {
                 var escaped = escapeHTML(res);
                 var container = $('<pre/>').html($('<code/>').addClass(format).html(escaped));
