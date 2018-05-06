@@ -1,3 +1,9 @@
+/**
+ * Contest : IDEAFUSE 2018 Qualification
+ * Team    : TurfaJauhYa
+ * Author  : Yonas Adiel
+ * Problem : F - Thumb Up Thumb Down Cute Cat
+ */
 #include <bits/stdc++.h>
 #define ll long long
 #define pb push_back

@@ -1,3 +1,9 @@
+/**
+ * Contest : IDEAFUSE 2018 Qualification
+ * Team    : TurfaJauhYa
+ * Author  : Yonas Adiel
+ * Problem : C - Raon and Candy
+ */
 #include <bits/stdc++.h>
 #define ll long long
 #define pb push_back
