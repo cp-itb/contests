@@ -2,7 +2,7 @@
  * Contest : IDEAFUSE 2018 Qualification
  * Team    : I See the One
  * Author  : Dicky Novanto
- * Problem : D - Aota and Tournament
+ * Problem : E - Inaccurate Report
  */
 
 #include <bits/stdc++.h>
