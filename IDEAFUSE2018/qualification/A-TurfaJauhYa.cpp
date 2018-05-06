@@ -1,3 +1,9 @@
+/**
+ * Contest : IDEAFUSE 2018 Qualification
+ * Team    : TurfaJauhYa
+ * Author  : Yonas Adiel
+ * Problem : A - Nice Bro Aron
+ */
 #include <bits/stdc++.h>
 #define ll long long
 #define pb push_back
