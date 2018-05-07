@@ -18,7 +18,7 @@ par = c
 ans = 0
 deft = k-1 if k>1 else 1
 while deft*par<=n:
-	if (k+1)*i<n:
+	if (k+1)*par<n:
 		par += c
 		continue
 	sisa = n-deft*par
