@@ -2,7 +2,7 @@
  * Contest : IDEAFUSE 2018 Final
  * Team    : I See the One
  * Author  : Dicky Novanto, Devin Alvaro
- * Problem : J
+ * Problem : J - Raon and Voting
  */
 #include<bits/stdc++.h>
 

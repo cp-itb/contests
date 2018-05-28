@@ -2,7 +2,7 @@
  * Contest : IDEAFUSE 2018 Final
  * Team    : I See the One
  * Author  : Dicky Novanto
- * Problem : A
+ * Problem : A - Biutiful Number
  */
 #include<bits/stdc++.h>
 

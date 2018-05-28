@@ -2,7 +2,7 @@
  * Contest : IDEAFUSE 2018 Final
  * Team    : I See the One
  * Author  : Tony
- * Problem : K
+ * Problem : K - Echo Signal
  */
 #include<bits/stdc++.h>
 
