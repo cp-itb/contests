@@ -99,7 +99,7 @@ function loadFile(source, target, callback) {
                 });
                 target.html(container);
             } else if (format === 'pdf') {
-                var container = $('<iframe/>', {
+                var container = $('<embed/>', {
                     src: source,
                     width: '100%',
                     height: '700px'
