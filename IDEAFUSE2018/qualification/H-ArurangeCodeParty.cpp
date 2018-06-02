@@ -72,12 +72,12 @@ int main(){
 		}
 	}
 	if (cnt) ans.pb({cnt, curr});
-	cout << ans.size() * 2LL << endl;
+	printf("%lld\n", 2LL*ans.size());
 	string spasi = "";
 	for (auto& it : ans){
-		cout << spasi << it.fi << " " << it.se;
+		printf("%s%d %d", spasi.c_str(), it.fi, it.se);
 		spasi = " ";
 	}
-	cout << endl;
+	printf("\n");
 	return 0;
 }
