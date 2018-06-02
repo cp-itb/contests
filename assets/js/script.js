@@ -42,6 +42,13 @@ $(function() {
         location.hash = href;
     });
 
+    // Toggle Button for menu
+    $('#sidebarToggleButton').on('click', function(e) {
+        $(e.target).toggleClass('active');
+        $('.sidebar').toggleClass('hidden');
+        $('main').toggleClass('active');
+    });
+
     // Parse URL hash and view appropriate tab, sequentially
     function showTab(url, separatorIndex) {
         var tab = url;

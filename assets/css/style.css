@@ -36,20 +36,30 @@ h1 {
     bottom: 0;
     left: 0;
     z-index: 1000;
-    padding: 20px;
+    padding: 20px 0;
     overflow-x: hidden;
     overflow-y: auto;
-    /* Scrollable contents if viewport is shorter than content. */
     border-right: 1px solid #eee;
+    transition: all 1s ease;
+}
+
+.sidebar.hidden {
+    max-width: 0;
+    transition: all 1s ease;
+}
+
+main {
+    transition: all 1s ease;
+}
+
+main.active {
+    max-width: 100%;
+    flex: 0 0 100%;
+    transition: all 1s ease;
 }
 
 
 /* Sidebar navigation */
-
-.sidebar {
-    padding-left: 0;
-    padding-right: 0;
-}
 
 .sidebar .nav {
     margin-bottom: 20px;

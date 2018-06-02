@@ -24,7 +24,7 @@
     </nav>
     <div class="container-fluid">
         <div class="row">
-            <nav class="col-sm-3 col-md-2 bg-light sidebar">
+            <nav class="col-8 col-sm-3 bg-light sidebar">
                 <ul class="nav nav-pills flex-column">
                     <% contests.forEach((contest) => { %>
                         <% if (contest.onlyround) { %>
@@ -50,7 +50,10 @@
                 </ul>
             </nav>
 
-            <main class="col-sm-9 ml-sm-auto col-md-10 pt-3" role="main">
+            <main class="ml-auto col-4 col-sm-9 pt-3" role="main">
+                <div class="mb-3">
+                    <button class="btn btn-outline-primary active" id="sidebarToggleButton">Menu</button>
+                </div>
                 <div class="tab-content">
                     <% contests.forEach((contest) => { %>
                         <% contest.rounds.forEach((round) => { %>
