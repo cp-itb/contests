@@ -1,3 +1,10 @@
+/**
+ * Contest : NPC 2018 Qualification
+ * Team    : Yonas Adiel
+ * Author  : Yonas Adiel
+ * Problem : D - Siapa Pasanganku
+ */
+
 #include<bits/stdc++.h>
 using namespace std;
 

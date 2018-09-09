@@ -1,3 +1,10 @@
+/**
+ * Contest : NPC 2018 Qualification
+ * Team    : Yonas Adiel
+ * Author  : Yonas Adiel
+ * Problem : E - Bermain Tanah
+ */
+
 #include <bits/stdc++.h>
 #define ll long long
 #define maks first

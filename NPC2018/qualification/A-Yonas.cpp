@@ -1,3 +1,10 @@
+/**
+ * Contest : NPC 2018 Qualification
+ * Team    : Yonas Adiel
+ * Author  : Yonas Adiel
+ * Problem : A - Dadu Joris
+ */
+
 #include <bits/stdc++.h>
 #define MAXT 100000
 #define ld long double
