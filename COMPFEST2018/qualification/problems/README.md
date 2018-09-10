@@ -1,6 +1,12 @@
 # Problems
 
 - [A - Origami Tempel](#a---origami-tempel)
+- [B - Drone Pak Chanek](#b---drone-pak-chanek)
+- [C - Mencari Tempat](#c---mencari-tempat)
+- [D - Memperpanjang Barisan](#d---memperpanjang-barisan)
+- [E - Mari Membaca](#e---mari-membaca)
+- [F - Jelajah Kota](#f---jelajah-kota)
+- [G - FPB Terbesar](#g---fpb-terbesar)
 
 # A - Origami Tempel
 
@@ -12,7 +18,7 @@
 
 Pak Chanek memiliki banyak kertas origami berbentuk persegi panjang. Di kala senggang, dia suka melipat kertas-kertas tersebut dan menghasilkan bentuk hewan-hewan unik. Bosan dengan karya origami biasa, Pak Chanek memiliki ide lain terhadap origaminya.
 
-ilustrasi
+![origami-tempel-illustration](https://user-images.githubusercontent.com/8296835/45300392-69a4bc80-b538-11e8-95f6-0251043c37e6.png)
 
 Pak Chanek ingin membuat N kertas origaminya menjadi sebuah kesatuan dengan cara menempelkan sisi-sisinya. Dua atau lebih origami dapat disatukan hanya jika sisi yang ditempelkan memiliki panjang yang sama. Agar memiliki bentuk yang unik, dia dapat menempelkan beberapa kertas sekaligus. Setelah dilihat-lihat, Pak Chanek ternyata tidak terlalu suka dengan tempelan-tempelan tersebut. Baginya, tempelan-tempelan tersebut membuat kerumitan apalagi jika sisi yang ditempelkan cukup panjang. Lebih lanjut, Pak Chanek mendefinisikan nilai kerumitan dari sebuah tempelan dengan (X - 1) * S dengan X adalah banyak kertas yang menempel dan S adalah panjang sisi yang ditempelkan. Sekarang Pak Chanek bertanya-tanya, berapakah total nilai kerumitan minimum yang dapat diperoleh?
 
