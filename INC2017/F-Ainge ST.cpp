@@ -1,3 +1,10 @@
+/**
+ * Contest : INC 2017
+ * Team    : Ainge ST
+ * Author  : Luqman Arifin
+ * Problem : F - Maximum Subset
+ */
+
 #include <bits/stdc++.h>
 
 using namespace std;

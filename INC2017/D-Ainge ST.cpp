@@ -1,3 +1,10 @@
+/**
+ * Contest : INC 2017
+ * Team    : Ainge ST
+ * Author  : Wiwit Rifa'i
+ * Problem : D - Galateas Diet
+ */
+
 #include <bits/stdc++.h>
 
 using namespace std;

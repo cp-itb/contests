@@ -1,3 +1,10 @@
+/**
+ * Contest : INC 2017
+ * Team    : Ainge ST
+ * Author  : Wiwit Rifa'i
+ * Problem : L - Pretty Table
+ */
+
 #include <bits/stdc++.h>
 
 using namespace std;

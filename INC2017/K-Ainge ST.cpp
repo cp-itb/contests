@@ -1,3 +1,10 @@
+/**
+ * Contest : INC 2017
+ * Team    : Ainge ST
+ * Author  : Alfonsus Raditya Arsadjaja
+ * Problem : K - Adding Numbers
+ */
+
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long LL;

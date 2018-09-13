@@ -1,3 +1,10 @@
+/**
+ * Contest : INC 2017
+ * Team    : Ainge ST
+ * Author  : Luqman Arifin
+ * Problem : E - Flip and Combos
+ */
+
 #include <bits/stdc++.h>
 
 using namespace std;
