@@ -1,6 +1,6 @@
 # contests
 
-[![CircleCI](https://circleci.com/gh/competitive-programming-itb/contests/tree/master.svg?style=svg)](https://circleci.com/gh/competitive-programming-itb/contests/tree/master)
+[![CircleCI](https://circleci.com/gh/cp-itb/contests/tree/master.svg?style=svg)](https://circleci.com/gh/cp-itb/contests/tree/master)
 
 Solutions to various CP contests (especially Indonesian local contests), written by teams from Institut Teknologi Bandung.
 
@@ -18,12 +18,12 @@ All ITB students are very welcomed to contribute to this repository. To make eve
         │   ├── ...
         │   ├── editorials          // Where to put editorials. This is optional
         │   │   ├── A.md            // <ProblemCode>.md
-        │   │   ├── B.md            // Currently only markdown is supported
+        │   │   ├── B.md            // Currently only markdown and pdf is supported
         │   │   ├── E.md            // Missing editorials are fine (C & D in this case)
         │   │   └── ...
         │   └── problems            // Where to put problem statements.
         │       │                   // This is optional, too, but very recommended
-        │       ├── A.md            // <ProblemCode>.md
+        │       ├── A.md            // <ProblemCode>.md or <ProblemCode>.pdf
         │       ├── B.md
         │       └── ...
         │   ...
