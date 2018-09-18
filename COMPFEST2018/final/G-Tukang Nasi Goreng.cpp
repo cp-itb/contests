@@ -5,17 +5,6 @@
  * Problem : G - Pertempuran Kuda   
  */
 
-/*
-  COMPETITION
-  Is the time you kill. The ill you will create.
-  The knowledge you neglect to learn.
-  The connection you fail to build.
-  the health you sacrifice along the path.
-  Your inability to generate ideas.
-  The people around you who dont support and love.
-  Your effort and whatever god you curse for badluck.
-*/
-
 #include <bits/stdc++.h>
 
 using namespace std;
