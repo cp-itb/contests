@@ -449,3 +449,4 @@ Untuk kasus uji pertama, ambil 3 buah bilangan genap apa saja sehingga FPB yang 
 - 1 ≤ N ≤ 100.000
 - 1 ≤ M ≤ N
 - 1 ≤ Ai ≤ 1.000.000
+
