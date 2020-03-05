@@ -1,7 +1,5 @@
 # contests
 
-[![CircleCI](https://circleci.com/gh/cp-itb/contests/tree/master.svg?style=svg)](https://circleci.com/gh/cp-itb/contests/tree/master)
-
 Solutions to various CP contests (especially Indonesian local contests), written by teams from Institut Teknologi Bandung.
 
 ## Contributing guide
