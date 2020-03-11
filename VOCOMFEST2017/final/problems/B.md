@@ -6,7 +6,7 @@
 
 ## Description
 
-There is a group of N people, each of them has ID card labelled from 1,2,..N. They are going to enter the "Amazing Labyrinth". The labyrinth is an undirected graph with V vertices and E edges. Each vertex is labelled with number 1,2,...,V. The group will start at vertex 1. They will walk together as a group to reach the finish at vertex V.
+There is a group of $N$ people, each of them has ID card labelled from 1,2,..N. They are going to enter the "Amazing Labyrinth". The labyrinth is an undirected graph with V vertices and E edges. Each vertex is labelled with number 1,2,...,V. The group will start at vertex 1. They will walk together as a group to reach the finish at vertex V.
 
 The vertices in the labyrinth has a unique (yet deadly) rule. To be able to enter vertex k (k=1,2,...,V), all of the person with ID of rk,1, rk,2,...,rk,pk must be present and alive. If the requirement is not met, the group cannot enter the particular vertex. There are also sacrifices needed when exiting a vertex. To be able to exit from vertex k and move to another vertex, all of the person with ID of sk,1, sk,2,...,sk,qk must be sacrificed to death. Your task is to determine the maximum number of people in the group that can survive and enter the finish at vertex V.
 
