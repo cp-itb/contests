@@ -8,7 +8,7 @@
 
 Suatu hari, Joris pergi ke SchemaStore untuk membeli oleh oleh untuk Tutut, temannya. Disana banyak sekali barang barang unik. Setelah berjalan-jalan cukup lama, Joris melihat banner :
 
-"DISKON 99,999% DADU EV-PISI, SEHARGA 1000 RUPIAH"
+"DISKON $99,999\%$ DADU EV-PISI, SEHARGA 1000 RUPIAH"
 
 ![](img/dadu_joris_dadu.png)
 
