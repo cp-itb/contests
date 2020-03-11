@@ -42,6 +42,6 @@ S dipecah setiap 6 karakter menjadi 010101, 000110, 100001, 100101 Tiap pecahan 
 
 ## Batasan
 
-- T <= 50
+- $T \leq 50$
 - Panjang 6 <= S <= 150
 - S hanya akan terdiri dari karakter '0' dan '1
