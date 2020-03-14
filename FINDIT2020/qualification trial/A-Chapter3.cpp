@@ -67,7 +67,7 @@ int main () {
         pq.pop();
     }
 
-    cout << tot / 3 << el;
+    cout << tot / n << el;
 
     return 0;
 }

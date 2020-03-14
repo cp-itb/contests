@@ -11,10 +11,10 @@ Misalkan bilangan pertama adalah $(3 + 4i)$ dan bilangan kedua adalah $(2 + 5i)$
 ## Input
 
 Sebuah baris berisi 4 angka dipisahkan spasi berturut $A\_1, B\_1, A\_2, B\_2$.
-$A\_1$ adalah komponen bilangan real dari angka pertama.
-$B\_1$ adalah komponen bilangan imajiner dari angka pertama.
-$A\_2$ adalah komponen bilangan real dari angka kedua.
-$B\_2$ adalah komponen bilangan imajiner dari angka kedua.
+- $A\_1$ adalah komponen bilangan real dari angka pertama.
+- $B\_1$ adalah komponen bilangan imajiner dari angka pertama.
+- $A\_2$ adalah komponen bilangan real dari angka kedua.
+- $B\_2$ adalah komponen bilangan imajiner dari angka kedua.
 
 ## Output
 
