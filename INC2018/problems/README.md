@@ -1,0 +1,15 @@
+# Problems
+
+- [A - Tour de BINUS](#a---tour-de-binus)
+- [B - Linked List](#b---linked-list)
+- [C - Hierarchical Structure](#c---hierarchical-structure)
+- [D - Substring Permutation](#d---substring-permutation)
+- [E - The Good, the Great, and the Superb](#e---the-good-the-great-and-the-superb)
+- [F - KMP](#f---kmp)
+- [G - Discs](#g---discs)
+- [H - Plate Parity](#h---plate-parity)
+- [I - Expected Value of a Permutation](#i---expected-value-of-a-permutation)
+- [J - A Study on Groups](#j---a-study-on-groups)
+- [K - Living Subgraph](#k---living-subgraph)
+- [L - Fair Tournament](#l---fair-tournament)
+- [M - Moving Around](#m---moving-around)
