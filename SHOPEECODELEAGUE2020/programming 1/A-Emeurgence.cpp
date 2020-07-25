@@ -1,7 +1,7 @@
 /**
 * Contest : Shopee Code League 2020 - Programming 1
 * Team    : Emeurgence
-* Author  : Mastre
+* Author  : Muhammad Kamal Shafi
 * Problem : A - Search Engine
 */
 #include <bits/stdc++.h>

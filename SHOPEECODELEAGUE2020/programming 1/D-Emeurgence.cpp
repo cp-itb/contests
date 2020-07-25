@@ -1,7 +1,7 @@
 /**
 * Contest : Shopee Code League 2020 - Programming 1
 * Team    : Emeurgence
-* Author  : mhasan01
+* Author  : Muhammad Hasan
 * Problem : D - Item Stock
 */
 #include <bits/stdc++.h>

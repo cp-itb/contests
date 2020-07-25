@@ -1,7 +1,7 @@
 /**
 * Contest : Shopee Code League 2020 - Programming 1
 * Team    : Emeurgence
-* Author  : donbasta
+* Author  : Farras Mohammad Hibban Faddila
 * Problem : E - Lucky Winner
 */
 #include <bits/stdc++.h>

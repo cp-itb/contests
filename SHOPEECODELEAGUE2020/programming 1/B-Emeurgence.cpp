@@ -1,7 +1,7 @@
 /**
 * Contest : Shopee Code League 2020 - Programming 1
 * Team    : Emeurgence
-* Author  : mhasan01
+* Author  : Muhammad Hasan
 * Problem : B - Judging Servers
 */
 #include <bits/stdc++.h>
