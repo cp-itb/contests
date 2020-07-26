@@ -1,6 +1,6 @@
 /**
 * Contest : Shopee Code League 2020 - Programming 2
-* Team    : Emeurgence
+* Team    : Arurange Love Sadikin Party
 * Author  : Jehian Norman Saviero
 * Problem : B - Shopee Logistics
 */
