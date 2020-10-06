@@ -5,9 +5,6 @@
  * Problem : C
  */
 #include <bits/stdc++.h>
-#pragma gcc optimize ("O2")
-#pragma gcc optimize ("unroll-loops")
-#include <bits/stdc++.h>
 
 
 #define fi first

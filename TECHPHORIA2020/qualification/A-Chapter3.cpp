@@ -42,6 +42,7 @@ sim dor(const c&) { ris; }
 const int N = 5;
 const int M = 3e4 + 5;
 const int c[] = {50, 25, 10, 5, 1};
+
 long long dp[M];
 
 int main() {

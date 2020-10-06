@@ -1,5 +1,5 @@
 /**
- * Contest : COMPFEST 2020 Qualification
+ * Contest : COMPFEST 2020 Final
  * Team    : ItbNoFukkatsu
  * Author  : Farras Hibban
  * Problem : D
