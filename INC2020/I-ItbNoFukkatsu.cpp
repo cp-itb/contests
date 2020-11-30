@@ -1,7 +1,7 @@
 /**
  * Contest  : INC 2020
  * Team     : ItbNoFukkatsu
- * Author   : Muhammad Kamal Shafi
+ * Author   : Farras Faddila
  * Problem  : I
  */
 /** START OF DESPERATE OPTIMIZATION **/
