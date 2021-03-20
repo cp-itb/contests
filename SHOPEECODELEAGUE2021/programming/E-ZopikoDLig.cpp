@@ -6,25 +6,25 @@
 * (Partial Score)
 */
 #include <bits/stdc++.h>
-
-
+ 
+ 
 #define fi first
 #define se second
 #define pb(a) push_back(a)
 #define mp(a, b) make_pair(a, b)
 #define el '\n'
-
+ 
 using namespace std;
 using ll = long long;
 using pii = pair<int, int>;
-
+ 
 const int D = 1e3 + 10;
 const int K = 12;
 const int WD = 7;
-
+ 
 int d;
 int C[K + 22][WD + 2];
-
+ 
 vector<vector<int>> adj = {
     {},
     {22,25,26,27,28}, //1
@@ -60,16 +60,15 @@ vector<vector<int>> adj = {
     {12,29,7,30,11,32}, //31
     {10,16,11,31,12,13} //32
 };
-unordered_map<string, int> dp[2], simp[2];
-const int SIMP_DAY = 30;
-
+unordered_map<string, int> dp[2];
+ 
 int lastid[K + 22];
-
+ 
 int main () {
     ios_base::sync_with_stdio(false);
     cin.tie(0);
     cout.tie(0);
-
+ 
     cin >> d;
     for (int i=1;i<=12;i++){
         for (int j=1;j<=7;j++){
@@ -88,7 +87,7 @@ int main () {
     for (int i=1;i<=d;i++){
         int cur = (i & 1); // current
         int bef = (cur ^ 1); // before
-
+ 
         for (auto &keyval : dp[bef]){
             int node = (int)keyval.fi[0];
             for (int j=5;j>=0;j--){
@@ -109,59 +108,9 @@ int main () {
             }
         }
         dp[bef].clear();
-        if (i == SIMP_DAY){
-            simp[0] = dp[cur];
-        }
-        if (i == SIMP_DAY + 7){
-            simp[1] = dp[cur];
-            break;
-        }
-    }
-    {
-        int sisa = d - (SIMP_DAY + 7);
-        int sbag = sisa % 7;
-        int bag = sisa / 7;
-
-        for (auto &x : simp[0]){
-            if (simp[1].count(x.fi)){
-                x.se += (simp[1][x.fi] - x.se) * bag;
-            }
-        }
-        dp[0] = simp[0];
-        for (int i=1;i<=sbag;i++){
-            int cur = (i & 1); // current
-            int bef = (cur ^ 1); // before
-
-            for (auto &keyval : dp[bef]){
-                int node = (int)keyval.fi[0];
-                for (int j=5;j>=0;j--){
-                    lastid[(int)keyval.fi[j]] = j + 1;
-                }
-                for (auto &nnode : adj[node]){
-                    string nstate = "";
-                    nstate.pb((char)nnode);
-                    for (int j=0;j<5;j++){
-                        nstate.pb((char)keyval.fi[j]);
-                    }
-                    int temp;
-                    temp = dp[cur][nstate] = max(dp[cur][nstate], keyval.se + C[nnode][lastid[nnode]]);
-                    ans = max(ans, temp);
-                }
-                for (int j=5;j>=0;j--){
-                    lastid[(int)keyval.fi[j]] = 7;
-                }
-            }
-            dp[bef].clear();
-            if (i == SIMP_DAY){
-                simp[0] = dp[cur];
-            }
-            if (i == SIMP_DAY + 7){
-                simp[1] = dp[cur];
-                break;
-            }
-        }
     }
     cout << ans << el;
-
+ 
     return 0;
 }
+Language: C++14
