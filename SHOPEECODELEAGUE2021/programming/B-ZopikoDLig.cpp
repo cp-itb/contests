@@ -4,68 +4,55 @@
 * Author  : Farras Faddila
 * Problem : B
 */
-#include <bits/stdc++.h>
- 
- 
-#define fi first
-#define se second
-#define pb(a) push_back(a)
-#define mp(a, b) make_pair(a, b)
-#define el '\n'
- 
+#include<bits/stdc++.h>
 using namespace std;
+ 
 using ll = long long;
-using pii = pair<int, int>;
+using ld = long double;
  
-const int N = 1e4 + 10;
-const int K = 110;
-const ll INF = 1e18;
+const int N = 1000;
+const int M = 1000;
  
-int n, k;
-ll ar[N], pref[N];
-ll dp[K][N];
-long long C(int i, int j){
-    return (pref[j] - pref[i - 1]) * ((ll)(j - i + 1));
+ll ar[N + 10][M + 10];
+ 
+int n, m;
+ 
+void solve() {
+    cin >> n >> m;
+    vector<ll> kiri(n + 1), kanan(n + 1), total(n + 1);
+    for (int i = 1; i <= n; i++) {
+        kiri[i] = 0;
+        kanan[i] = 0;
+        for (int j = 1; j <= m; j++) {
+            cin >> ar[i][j];
+            total[i] += ar[i][j];
+            kiri[i] = max(kiri[i], total[i]);
+        }
+        ll temp = 0;
+        for (int j = m; j >= 1; j--) {
+            temp += ar[i][j];
+            kanan[i] = max(kanan[i], temp);
+        }
+    }
+    vector<vector<ll>> dp(n + 1, vector<ll>(2, 0));
+    dp[1][0] = kiri[1];
+    dp[1][1] = total[1];
+    for (int i = 2; i <= n; i++) {
+        dp[i][0] = max(dp[i - 1][0] + kiri[i], dp[i - 1][1] + total[i]);
+        dp[i][1] = max(dp[i - 1][1] + kanan[i], dp[i - 1][0] + total[i]);
+    }
+    cout << max(dp[n][0], dp[n][1]) << '\n';
 }
-void compute(int l, int r, int optl, int optr, int grup)
-{
-    if (l > r)
-        return;
-    int mid = (l + r) >> 1;
-    pair<long long, int> best = {INF, -1};
  
-    for (int i=optl;i<=min(mid, optr);i++){
-        best = min(best, {dp[grup - 1][i] + C(i + 1, mid), i});
-    }
+int main() {
+    ios_base::sync_with_stdio(0);
+    cin.tie(0); cout.tie(0);
  
-    dp[grup][mid] = best.first;
-    int opt = best.second;
- 
-    compute(l, mid - 1, optl, opt, grup);
-    compute(mid + 1, r, opt, optr, grup);
-}
- 
-int main () {
-    ios_base::sync_with_stdio(false);
-    cin.tie(0);
-    cout.tie(0);
- 
-    cin >> n >> k;
-    k--;
-    for (int i=1;i<=n;i++){
-        cin >> ar[i];
-        pref[i] = pref[i - 1] + ar[i];
+    int TC = 1;
+    cin >> TC;
+    for(int i = 1; i <= TC; i++) {
+        solve();
     }
-    for (int i=0;i<K;i++){
-        fill(dp[i] + 1, dp[i] + N, INF);
-    }
-    for (int i=1;i<=n;i++){
-        dp[0][i] = C(1, i);
-    }
-    for (int i=1;i<=k;i++){
-        compute(1, n, 0, n, i);
-    }
-    cout << dp[k][n] << el;
  
     return 0;
 }
