@@ -1,3 +1,10 @@
+ /**
+  * Contest : Joints 2021 Final
+  * Team    : Jangan Lupa Daftar Arkav 8
+  * Author  : Marcello Faria
+  * Problem : B - Power Terkecil
+  */
+
 #include <bits/stdc++.h>
 using namespace std;
 

@@ -1,3 +1,10 @@
+ /**
+  * Contest : Joints 2021 Final
+  * Team    : Jangan Lupa Daftar Arkav 8
+  * Author  : Marcello Faria
+  * Problem : K - Dua Kubu
+  */
+
 #include <bits/stdc++.h>
 using namespace std;
   
