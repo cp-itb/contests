@@ -18,6 +18,7 @@
   "homepage": "https://github.com/competitive-programming-itb/contests#readme",
   "dependencies": {
     "ejs": "^2.5.7",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "node": "^17.1.0"
   }
 }
